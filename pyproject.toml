@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pdf2pptx"
+version = "0.1.0"
+description = "Convert PDF pages into full-bleed PowerPoint slides as high-quality images"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pymupdf>=1.24",
+    "python-pptx>=0.6.23",
+]
+classifiers = [
+    "Environment :: Console",
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business :: Office Suites",
+]
+
+[project.scripts]
+pdf2pptx = "pdf2pptx.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pdf2pptx"]
